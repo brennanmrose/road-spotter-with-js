@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
 	def new
-		render :login
 		@user = User.new
+		render :login
 	end 
 
 	def create
