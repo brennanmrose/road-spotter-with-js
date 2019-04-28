@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :reported_issues
   root 'sessions#home' 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
