@@ -19,7 +19,7 @@
 	<%= f.text_field :postal_code %>
 	<br>
 	<%= f.label :category_id, 'Select a Category' %>
-	<%= f.collection_select :category_id, Category.all, :id, :name, prompt: true%>
+	<%= f.collection_select :category_id, Category.all, :id, :name,  { include_blank: true }%>
 	<br>
 	<br>
 	<%= f.submit 'Submit' %>
