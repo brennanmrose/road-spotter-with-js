@@ -4,12 +4,7 @@
 	<%= f.text_area :chief_complaint %>
 	<br>
 	<%= f.label :transportation_type, 'Transportation Type:' %>
-	<%= f.text_field :transportation_type, list: "reported_issues_autocomplete" %>
-	<datalist id="reported_issues_autocomplete">
-		<% ReportedIssue.all.each do |reported_issue| %>
-			<option value="<%= reported_issue.transportation_type %>">
-		<% end %>
-	</datalist>
+	<%= f.select(:transportation_type, ['Driver', 'Pedestrian', 'Cyclist', 'Other'], { include_blank: true }) %>
 	<br>
 	<%= f.label :street_address, 'Street Address:' %>
 	<%= f.text_field :street_address %>
