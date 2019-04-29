@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :categories do
   	resources :reported_issues, only: [:show, :index]
+  end
 
   resources :reported_issues
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
