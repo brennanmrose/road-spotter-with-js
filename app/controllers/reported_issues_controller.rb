@@ -4,6 +4,7 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def new
+		@reported_issue = ReportedIssue.new
 	end
 
 	def create
