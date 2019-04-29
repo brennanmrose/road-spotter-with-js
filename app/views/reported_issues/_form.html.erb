@@ -1,0 +1,28 @@
+<h1>Your Reported Issue</h1>
+<%= form_for @reported_issue do |f| %>
+	<%= f.label 'Cheif Complaint:' %>
+	<%= f.text_area :chief_complaint %>
+	<br>
+	<%= f.label 'Transportation Type:' %>
+	<%= f.text_field :transportation_type, list: "reported_issues_autocomplete" %>
+	<datalist id="reported_issues_autocomplete">
+		<% ReportedIssue.all.each do |reported_issue| %>
+			<option value="<%= reported_issue.transportation_type %>">
+		<% end %>
+	</datalist>
+	<br>
+	<%= f.label 'Street Address:' %>
+	<%= f.text_field :street_address %>
+	<br>
+	<%= f.label 'City:' %>
+	<%= f.text_field :locality %>	
+	<br>
+	<%= f.label 'State:' %>
+	<%= f.text_field :region %>
+	<br>
+	<%= f.label 'Zip Code:' %>
+	<%= f.text_field :postal_code %>
+	<br>
+	<br>
+	<%= f.submit 'Submit' %>
+<% end %>
