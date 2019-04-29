@@ -1,0 +1,14 @@
+<h1><%= @category.name %></h1>
+<h4>Reported Issues:</h4>
+<% @category.reported_issues.map do |issue| %>
+	<ol>
+		<li>
+			Issue: <%= issue.chief_complaint %><br>
+			Transportation: <%= issue.transportation_type %><br>
+			Street Address: <%= issue.street_address %><br>
+			City: <%= issue.locality %><br>
+			State: <%= issue.region %><br>
+			Zip Code: <%= issue.postal_code %>
+		</li>
+	</ol?>
+<% end %>
