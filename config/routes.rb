@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create]
 
   resources :categories do
-  	resources :reported_issues, only: [:new, :create, :index, :show]
+  	resources :reported_issues, only: [:new, :index, :show]
   end
 
   resources :reported_issues
