@@ -23,6 +23,7 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def show
+		@reported_issue = ReportedIssue.find(params[:id])
 	end
 
 	def edit
