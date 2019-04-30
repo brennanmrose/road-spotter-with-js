@@ -1,7 +1,11 @@
 class ReportedIssuesController < ApplicationController
 
 	def index
-		@reported_issues = ReportedIssue.all
+		if params[:category_id] && cat = Category.find_by_id(params[:category_id])
+			@reported_issues = cat.reported_issues
+		else
+			@reported_issues = ReportedIssue.all
+		end
 	end
 
 	def new
