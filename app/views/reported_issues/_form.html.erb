@@ -28,8 +28,8 @@
 	<%= f.collection_select :category_id, Category.all, :id, :name,  { include_blank: true }%>
 	<br>
 	<br>
-	<%= f.label :category_id, 'Or Create a New Category:' %>
-	<%= f.text_field :category_id %>
+	<%= f.label :category_name, 'Or Create a New Category:' %>
+	<%= f.text_field :category_name %>
 	<br>
 	<br>
 	<%= f.submit 'Submit' %>
