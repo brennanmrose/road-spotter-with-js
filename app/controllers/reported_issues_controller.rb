@@ -1,6 +1,7 @@
 class ReportedIssuesController < ApplicationController
 
 	def index
+		@reported_issues = ReportedIssue.all
 	end
 
 	def new
