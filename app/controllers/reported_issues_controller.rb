@@ -12,6 +12,14 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def create
+		@reported_issue = current_user.reported_issues.build(reported_issue_params)
+		@category = Category.find(@reported_issue.category_id)
+		@category.reported_issues << @reported_issue
+		if @reported_issue.save
+			redirect_to reported_issue_path(@reported_issue)
+		else
+			render :new
+		end
 	end
 
 	def show
