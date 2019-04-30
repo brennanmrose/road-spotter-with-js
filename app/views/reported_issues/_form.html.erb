@@ -3,23 +3,33 @@
 	<%= f.label :chief_complaint, 'Cheif Complaint:' %>
 	<%= f.text_area :chief_complaint %>
 	<br>
+	<br>
 	<%= f.label :transportation_type, 'Transportation Type:' %>
 	<%= f.select(:transportation_type, ['Driver', 'Pedestrian', 'Cyclist', 'Other'], { include_blank: true }) %>
+	<br>
 	<br>
 	<%= f.label :street_address, 'Street Address:' %>
 	<%= f.text_field :street_address %>
 	<br>
+	<br>
 	<%= f.label :locality, 'City:' %>
 	<%= f.text_field :locality %>	
+	<br>
 	<br>
 	<%= f.label :region, 'State:' %>
 	<%= f.text_field :region %>
 	<br>
+	<br>
 	<%= f.label :postal_code, 'Zip Code:' %>
 	<%= f.text_field :postal_code %>
 	<br>
-	<%= f.label :category_id, 'Select a Category' %>
+	<br>
+	<%= f.label :category_id, 'Select a Category:' %>
 	<%= f.collection_select :category_id, Category.all, :id, :name,  { include_blank: true }%>
+	<br>
+	<br>
+	<%= f.label :category_id, 'Or Create a New Category:' %>
+	<%= f.text_field :category_id %>
 	<br>
 	<br>
 	<%= f.submit 'Submit' %>
