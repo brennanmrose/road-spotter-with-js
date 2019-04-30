@@ -4,7 +4,11 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def new
-		@reported_issue = ReportedIssue.new
+		if params[:category_id] && cat = Category.find_by_id(params[:category_id])
+			@reported_issue = cat.reported_issues.build
+		else
+			@reported_issue = ReportedIssue.new
+		end
 	end
 
 	def create
