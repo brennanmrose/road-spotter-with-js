@@ -45,6 +45,9 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def destroy
+		find_reported_issue
+		@reported_issue.destroy
+		redirect_to reported_issues_path
 	end
 
 	private
