@@ -9,8 +9,8 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def new
-		if params[:category_id] && cat = Category.find_by_id(params[:category_id])
-			@reported_issue = cat.reported_issues.build
+		if params[:category_id] && find_category
+			@reported_issue = @category.reported_issues.build
 		else
 			@reported_issue = ReportedIssue.new
 		end
@@ -53,6 +53,10 @@ class ReportedIssuesController < ApplicationController
   	if !@reported_issue
   		redirect_to reported_issues_path
   	end
+  end
+
+  def find_category
+  	@category = Category.find_by_id(params[:category_id])
   end
 
 end
