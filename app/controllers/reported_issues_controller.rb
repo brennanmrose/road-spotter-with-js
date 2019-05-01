@@ -37,6 +37,11 @@ class ReportedIssuesController < ApplicationController
 
 	def update
 		find_reported_issue
+		if @reported_issue.update(reported_issue_params)
+			redirect_to reported_issue_path(@reported_issue)
+		else
+			render :edit
+		end
 	end
 
 	def destroy
