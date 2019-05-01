@@ -2,7 +2,7 @@ class ReportedIssuesController < ApplicationController
 
 	def index
 		if params[:category_id] && find_category
-			@reported_issues = cat.reported_issues
+			@reported_issues = @category.reported_issues
 		else
 			@reported_issues = ReportedIssue.all
 		end
