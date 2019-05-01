@@ -1,7 +1,7 @@
 class ReportedIssuesController < ApplicationController
 
 	def index
-		if params[:category_id] && cat = Category.find_by_id(params[:category_id])
+		if params[:category_id] && find_category
 			@reported_issues = cat.reported_issues
 		else
 			@reported_issues = ReportedIssue.all
