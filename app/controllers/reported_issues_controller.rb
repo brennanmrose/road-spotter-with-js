@@ -28,13 +28,15 @@ class ReportedIssuesController < ApplicationController
 	end
 
 	def show
-		@reported_issue = ReportedIssue.find(params[:id])
+		find_reported_issue
 	end
 
 	def edit
+		find_reported_issue
 	end
 
 	def update
+		find_reported_issue
 	end
 
 	def destroy
@@ -45,5 +47,12 @@ class ReportedIssuesController < ApplicationController
 	def reported_issue_params
 		params.require(:reported_issue).permit(:chief_complaint, :transportation_type, :street_address, :locality, :region, :postal_code, :category_id, :category_name)
 	end
+
+	def find_reported_issue
+  	@reported_issue = ReportedIssue.find(params[:id])
+  	if !@reported_issue
+  		redirect_to reported_issues_path
+  	end
+  end
 
 end
