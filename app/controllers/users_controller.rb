@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		redirect_to categories_path
+		require_login
 	end
 	
 	private
