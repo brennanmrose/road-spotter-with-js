@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= link_to 'Categories', categories_path %> - 
+    <%= link_to 'All Reported Issues', reported_issues_path %> - 
     <%= link_to 'Log Out', logout_path, method: :delete %>
     <%= yield %>
   </body>
