@@ -1,0 +1,8 @@
+<h1>All Categories:</h1>
+<% @categories.map do |category| %>
+<ul>
+	<li>
+		<%= link_to "#{category.name}", category_path(category) %>
+	</li>
+</ul>
+<% end %>
