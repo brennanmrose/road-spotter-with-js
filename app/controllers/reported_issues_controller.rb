@@ -38,7 +38,7 @@ class ReportedIssuesController < ApplicationController
 
 	def update
 		find_reported_issue
-		if @reported_issue.update(reported_issue_params)
+		if valid_user? && @reported_issue.update(reported_issue_params)
 			redirect_to reported_issue_path(@reported_issue)
 		else
 			render :edit
@@ -47,8 +47,12 @@ class ReportedIssuesController < ApplicationController
 
 	def destroy
 		find_reported_issue
-		@reported_issue.destroy
-		redirect_to reported_issues_path
+		if valid_user?
+			@reported_issue.destroy
+			redirect_to reported_issues_path
+		else
+			redirect_to reported_issue_path(@reported_issue)
+		end
 	end
 
 	private
@@ -66,6 +70,10 @@ class ReportedIssuesController < ApplicationController
 
   def find_category
   	@category = Category.find_by_id(params[:category_id])
+  end
+
+  def valid_user?
+  	@reported_issue.user_id == current_user.id
   end
 
 end
