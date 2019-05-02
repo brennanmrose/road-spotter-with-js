@@ -1,4 +1,5 @@
 class ReportedIssuesController < ApplicationController
+	before_action :require_login
 
 	def index
 		if params[:category_id] && find_category
