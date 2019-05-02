@@ -3,8 +3,7 @@
 <ul>
 	<li>
 		<%= issue.chief_complaint %><br>
-		Category: <%= issue.category_name %><br>
-		<%= link_to 'Link to issue', reported_issue_path(issue) %>
+		Category: <%= link_to "#{issue.category_name}", reported_issue_path(issue) %>
 	</li>
 </ul>
 <% end %>
