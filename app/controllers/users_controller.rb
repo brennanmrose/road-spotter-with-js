@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id 
-			redirect_to categories_path
+			redirect_to user_path(@user)
 		else
 			render :new
 		end
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
 	def show
 		require_login
+		@user = current_user
 	end
 	
 	private
