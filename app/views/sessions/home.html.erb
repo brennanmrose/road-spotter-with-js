@@ -1,4 +1,4 @@
 <h1>Welcome to Road Spotter</h1>
 
-<%= link_to 'Sign Up', signup_path %><br>
-<%= link_to 'Log In', login_path %>
+<%= if_logged_out_display_signup %><br>
+<%= if_logged_out_display_login %>
