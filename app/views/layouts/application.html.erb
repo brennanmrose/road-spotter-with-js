@@ -12,6 +12,7 @@
   <body>
     <%= link_to 'Categories', categories_path %>
     <%= link_to 'All Reported Issues', reported_issues_path %>
+    <%= if_logged_in_display_user_show %>
     <%= if_logged_in_display_logout %>
     <%= yield %>
   </body>
