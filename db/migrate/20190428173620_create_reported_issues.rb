@@ -6,7 +6,7 @@ class CreateReportedIssues < ActiveRecord::Migration[5.2]
       t.string :street_address, allow_nil: false
       t.string :locality, allow_nil: false
       t.string :region, allow_nil: false
-      t.integer :postal_code, allow_nil: false
+      t.string :postal_code, allow_nil: false
       t.integer :user_id, allow_nil: false
       t.integer :category_id, allow_nil: false
 
