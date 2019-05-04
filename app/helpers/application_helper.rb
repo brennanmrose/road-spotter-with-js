@@ -12,6 +12,12 @@ module ApplicationHelper
 		end
 	end
 
+	def if_logged_in_display_categories
+		if user_present?
+			link_to 'Categories', categories_path
+		end
+	end
+
 	private
 
 	def user_present?
