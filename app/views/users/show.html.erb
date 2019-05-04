@@ -11,4 +11,8 @@
 		</li>
 	<% end %>
 </ul>
+<ul>
+	<li><%= if_no_reported_issues_present %></li>
+</ul>
+
 <%= render partial: 'reported_issues/form', locals: {reported_issue: @reported_issue} %>
