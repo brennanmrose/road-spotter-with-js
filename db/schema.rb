@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_173847) do
     t.string "street_address"
     t.string "locality"
     t.string "region"
-    t.integer "postal_code"
+    t.string "postal_code"
     t.integer "user_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
