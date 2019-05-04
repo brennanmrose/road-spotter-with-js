@@ -1,2 +1,14 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
+<h2>Your Reported Issues:</h2>
+<ul>
+	<% @user.reported_issues.map do |issue| %>
+		<li>
+			<%= issue.chief_complaint %><br>
+			<%= issue.street_address %>
+			<%= issue.locality %>,
+			<%= issue.region %>
+			<%= issue.postal_code %>
+		</li>
+	<% end %>
+</ul>
 <%= render partial: 'reported_issues/form', locals: {reported_issue: @reported_issue} %>
