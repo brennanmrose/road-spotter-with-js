@@ -1,2 +1,2 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
-<h3>What would you like to do?</h3>
+<%= render partial: 'reported_issues/form', locals: {reported_issue: @reported_issue} %>

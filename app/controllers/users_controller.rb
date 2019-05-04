@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 	def show
 		require_login
 		@user = current_user
+		@reported_issue = ReportedIssue.new
 	end
 	
 	private
