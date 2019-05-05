@@ -13,7 +13,7 @@
 <% end %>
 <%= form_for @user do |f| %>
 	<%= f.label :first_name %>
-	<%= f.text_field :first_name %>
+	<%= f.text_field :first_name, required: true %>
 	<br>
 	<br>
 	<%= f.label :last_name %>
@@ -21,11 +21,11 @@
 	<br>
 	<br>
 	<%= f.label :email %>
-	<%= f.email_field :email %>
+	<%= f.email_field :email, required: true %>
 	<br>
 	<br>
 	<%= f.label :password %>
-	<%= f.password_field :password %>
+	<%= f.password_field :password, required: true %>
 	<br>
 	<br>
 	<%= f.submit 'Sign Up' %>
