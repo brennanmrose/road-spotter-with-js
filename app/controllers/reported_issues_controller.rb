@@ -19,7 +19,8 @@ class ReportedIssuesController < ApplicationController
 
 	def create
 		@reported_issue = current_user.reported_issues.build(reported_issue_params)
-		if @reported_issue.save
+		if @reported_issue.valid?
+			@reported_issue.save
 			redirect_to reported_issue_path(@reported_issue)
 		else
 			render :new
