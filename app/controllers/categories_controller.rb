@@ -10,11 +10,13 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.find_by(name: params[:category][:name])
-		if @category.nil?
-			@category = Category.create(category_params)
+		@category = Category.find_or_initialize_by(category_params)
+		if @category.valid?
+			@category.save
+			redirect_to category_path(@category)
+		else
+			render :new
 		end
-		redirect_to category_path(@category)
 	end
 
 	def show
