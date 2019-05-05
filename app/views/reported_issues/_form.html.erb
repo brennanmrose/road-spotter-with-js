@@ -12,7 +12,7 @@
 <% end %>
 <%= form_for @reported_issue do |f| %>
 	<%= f.label :chief_complaint, 'Cheif Complaint:' %>
-	<%= f.text_area :chief_complaint %>
+	<%= f.text_area :chief_complaint, required: true %>
 	<br>
 	<br>
 	<%= f.label :transportation_type, 'Transportation Type:' %>
@@ -20,19 +20,19 @@
 	<br>
 	<br>
 	<%= f.label :street_address, 'Street Address:' %>
-	<%= f.text_field :street_address %>
+	<%= f.text_field :street_address, required: true %>
 	<br>
 	<br>
 	<%= f.label :locality, 'City:' %>
-	<%= f.text_field :locality %>	
+	<%= f.text_field :locality, required: true %>	
 	<br>
 	<br>
 	<%= f.label :region, 'State:' %>
-	<%= f.text_field :region %>
+	<%= f.text_field :region, required: true %>
 	<br>
 	<br>
 	<%= f.label :postal_code, 'Zip Code:' %>
-	<%= f.text_field :postal_code %>
+	<%= f.text_field :postal_code, required: true %>
 	<br>
 	<br>
 	<%= f.label :category_id, 'Select a Category:' %>
