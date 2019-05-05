@@ -1,5 +1,16 @@
 <h1>Find or Create Your Category</h1>
-
+<% if @category.errors.any? %>	
+	<div id="error_explanation">
+	<h2>
+		<%= pluralize(@category.errors.count, "error") %> prohibited this issue from being saved:
+	</h2>
+		<ul>
+		<% @category.errors.full_messages.each do |msg| %>
+	  	<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
 <%= form_for @category do |f| %>
 	<%= f.text_field :name, list: "categories_autocomplete" %>
 	<datalist id="categories_autocomplete">
