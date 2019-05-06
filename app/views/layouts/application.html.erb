@@ -14,9 +14,6 @@
     <%= if_logged_in_display_reported_issues %>
     <%= if_logged_in_display_user_show %>
     <%= if_logged_in_display_logout %>
-    <% if flash[:notice] %>
-      <div class='notice'><%= flash[:notice] %></div>
-    <% end %>
     <%= yield %>
   </body>
 </html>
