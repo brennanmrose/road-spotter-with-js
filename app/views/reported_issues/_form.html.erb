@@ -1,16 +1,5 @@
-<% if @reported_issue.errors.any? %>	
-	<div id="error_explanation">
-	<h2>
-		<%= pluralize(@reported_issue.errors.count, "error") %> prohibited this issue from being saved:
-	</h2>
-		<ul>
-		<% @reported_issue.errors.full_messages.each do |msg| %>
-	  	<li><%= msg %></li>
-		<% end %>
-		</ul>
-	</div>
-<% end %>
 <%= form_for @reported_issue do |f| %>
+	<%= render partial: 'layouts/errors', locals: {object: @reported_issue} %>
 	<%= f.label :chief_complaint, 'Cheif Complaint:' %>
 	<%= f.text_area :chief_complaint, required: true %>
 	<br>
