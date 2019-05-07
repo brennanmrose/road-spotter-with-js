@@ -1,12 +1,8 @@
 <h1>Sign Up Here</h1>
 <%= form_for @user do |f| %>
 	<%= render partial: 'layouts/errors', locals: {object: @user} %>
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name, required: true %>
-	<br>
-	<br>
-	<%= f.label :last_name %>
-	<%= f.text_field :last_name %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true %>
 	<br>
 	<br>
 	<%= f.label :email %>

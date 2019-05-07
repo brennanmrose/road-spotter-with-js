@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.first_name %>!</h1>
+<h1>Welcome, <%= @user.name %>!</h1>
 <h2>Your Reported Issues:</h2>
 <ul>
 	<% @user.reported_issues.map do |issue| %>
