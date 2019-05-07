@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	require 'securerandom'
 
 	def new
 		@user = User.new
@@ -21,7 +22,7 @@ class SessionsController < ApplicationController
 		@user = User.find_or_create_by(uid: auth['uid']) do |u|
 			u.name = auth['info']['name']
 			u.email = auth['info']['email']
-			u.password = auth['uid']   # Secure Random Hex
+			u.password = SecureRandom.hex(15)
   	end
 
   	session[:user_id] = @user.id
