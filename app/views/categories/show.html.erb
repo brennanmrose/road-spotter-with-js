@@ -3,14 +3,11 @@
 <% @category.reported_issues.map do |issue| %>
 	<ol>
 		<li>
-			Issue: <%= issue.chief_complaint %><br>
-			Transportation: <%= issue.transportation_type %><br>
-			Street Address: <%= issue.street_address %><br>
-			City: <%= issue.locality %><br>
-			State: <%= issue.region %><br>
-			Zip Code: <%= issue.postal_code %>
+			Street Address: <%= issue.street_address %> <%= issue.locality %>, <%= issue.region %> <%= issue.postal_code %>
 		</li>
 	</ol?>
 <% end %>
+<br>
+<%= link_to "See reported issues for #{@category.name}", category_reported_issues_path(@category) %>
 <br>
 <%= link_to 'Report a new issue', new_category_reported_issue_path(@category) %>
