@@ -7,7 +7,7 @@ module ApplicationHelper
 	end
 
 	def if_logged_in_display_logout
-		if session[:user_id].present?
+		if user_present?
 			link_to 'Log Out', logout_path, method: :delete
 		end
 	end
