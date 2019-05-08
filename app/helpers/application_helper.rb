@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+	def if_logged_in_display_home
+		if user_present?
+			link_to 'Home', root_path
+		end
+	end
+
 	def if_logged_in_display_logout
 		if session[:user_id].present?
 			link_to 'Log Out', logout_path, method: :delete
