@@ -14,6 +14,7 @@ class ReportedIssuesController < ApplicationController
 			@reported_issue = @category.reported_issues.build
 		else
 			@reported_issue = ReportedIssue.new
+			@reported_issue.build_category
 		end
 	end
 
