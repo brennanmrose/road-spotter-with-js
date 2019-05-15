@@ -27,7 +27,11 @@
 	<%= f.label :category_id, 'Select a Category:' %>
 	<%= f.collection_select :category_id, Category.all, :id, :name,  { include_blank: true }%>
 	<br>
-	<p>Don't see the category you're looking for? <%= link_to 'Create One!', new_category_path %></p>
+	<h4>Don't see the category you're looking for Create One!</h4>
+	<%= f.fields_for :category do |c| %>
+		<%= c.label :name %>
+		<%= c.text_field :name %>
+	<% end %>
 	<br>
 	<br>
 	<%= f.submit 'Submit' %>
