@@ -57,7 +57,7 @@ class ReportedIssuesController < ApplicationController
 	private
 
 	def reported_issue_params
-		params.require(:reported_issue).permit(:chief_complaint, :transportation_type, :street_address, :locality, :region, :postal_code, :category_id, :category_name)
+		params.require(:reported_issue).permit(:chief_complaint, :transportation_type, :street_address, :locality, :region, :postal_code, :category_id, :category_name, category_attributes: [:name])
 	end
 
 	def find_reported_issue
