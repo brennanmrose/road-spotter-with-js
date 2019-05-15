@@ -27,10 +27,13 @@
 	<%= f.label :category_id, 'Select a Category:' %>
 	<%= f.collection_select :category_id, Category.all, :id, :name,  { include_blank: true }%>
 	<br>
-	<h4>Don't see the category you're looking for Create One!</h4>
-	<%= f.fields_for :category do |c| %>
-		<%= c.label :name %>
-		<%= c.text_field :name %>
+	<% if !params[:category_id] %>
+		<h4>Don't see the category you're looking for Create One!</h4>
+		<%= f.fields_for :category do |c| %>
+		<% binding.pry %>
+			<%= c.label :name %>
+			<%= c.text_field :name %>
+		<% end %>
 	<% end %>
 	<br>
 	<br>
