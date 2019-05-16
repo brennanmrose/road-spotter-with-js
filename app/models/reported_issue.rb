@@ -5,19 +5,13 @@ class ReportedIssue < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
 
-	# accepts_nested_attributes_for :category
-
 	def category_attributes=(attributes)
 		category = Category.find_or_initialize_by(name: name)
 		self.category = category if category.valid?
 	end
 
-	# def category_name
-	# 	category.try(:name)
-	# end
+	def self.find_by_postal_code(postal_code)
+		where('postal_code =?', postal_code)
+	end
 
-	# def category_name=(name)
-	# 	self.category = Category.find_or_initialize_by(name: name)
-	# end
-	
 end
