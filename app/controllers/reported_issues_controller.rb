@@ -9,6 +9,11 @@ class ReportedIssuesController < ApplicationController
 		end
 	end
 
+	def search
+		byebug
+		redirect_to reported_issues_path
+	end
+
 	def new
 		if params[:category_id] && find_category
 			@reported_issue = @category.reported_issues.build
