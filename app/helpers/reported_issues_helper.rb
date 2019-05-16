@@ -12,7 +12,7 @@ module ReportedIssuesHelper
 		end
 	end
 
-	def link_to_ri_new_nested_or_non_nested
+	def link_to_new_reported_issue_nested_or_non_nested
 		if @category.present?
 			link_to 'Report a New Issue', new_category_reported_issue_path(@category)
 		else
