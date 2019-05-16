@@ -12,8 +12,8 @@
 		</li>
 	<% end %>
 </ul>
+<%= if_no_reported_issues_present_display_message %>
 <br>
-<%= if_no_reported_issues_present %>
-
+<br>
 <h2>Report a New Issue:</h2>
 <%= render partial: 'reported_issues/form', locals: {reported_issue: @reported_issue} %>
