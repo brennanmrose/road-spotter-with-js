@@ -24,6 +24,12 @@ module ApplicationHelper
 		end
 	end
 
+	def if_logged_in_display_reported_issues
+		if user_present?
+			link_to 'All Reported Issues', reported_issues_path
+		end
+	end
+
 	private
 
 	def user_present?
