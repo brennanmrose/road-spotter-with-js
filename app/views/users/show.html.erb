@@ -2,18 +2,21 @@
 <br>
 <h2>Your Reported Issues:</h2>
 <ul>
-	<% @user.reported_issues.map do |issue| %>
+	<% @user.categories.map do |category| %>
 		<li>
-			<%= issue.chief_complaint %><br>
-			<%= issue.street_address %>
-			<%= issue.locality %>,
-			<%= issue.region %>
-			<%= issue.postal_code %>
+			<h4><%= category.name %></h4>
+			<% category.reported_issues.map do |issue| %>
+				<%= issue.chief_complaint %><br>
+				<%= issue.street_address %>
+				<%= issue.locality %>,
+				<%= issue.region %>
+				<%= issue.postal_code %><br>
+				<%= link_to 'View', reported_issue_path(issue) %><br>
+				<%= link_to 'Edit', edit_reported_issue_path(issue) %><br>
+				<%= link_to 'Delete', reported_issue_path(issue), method: 'delete' %>
 		</li>
+		<br>
+		<% end %>
 	<% end %>
 </ul>
 <%= if_no_reported_issues_present_display_message %>
-<br>
-<br>
-<h2>Report a New Issue:</h2>
-<%= render partial: 'reported_issues/form', locals: {reported_issue: @reported_issue} %>
