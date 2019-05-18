@@ -5,7 +5,7 @@ class ReportedIssue < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
 
-	scope :find_by_postal_code, -> (postal_code){where("postal_code = ?", postal_code)}
+	scope :by_postal_code, -> (postal_code){where("postal_code = ?", postal_code)}
 
 	accepts_nested_attributes_for :category
 

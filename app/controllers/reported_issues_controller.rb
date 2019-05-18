@@ -5,7 +5,7 @@ class ReportedIssuesController < ApplicationController
 		if params[:category_id] && find_category
 			@reported_issues = @category.reported_issues
 		elsif params[:postal_code]
-			@reported_issues = ReportedIssue.find_by_postal_code(params[:postal_code])
+			@reported_issues = ReportedIssue.by_postal_code(params[:postal_code])
 		else
 			@reported_issues = ReportedIssue.all
 		end
