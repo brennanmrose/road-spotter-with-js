@@ -7,10 +7,6 @@ class ReportedIssue < ApplicationRecord
 
 	scope :find_by_postal_code, -> (postal_code){where("postal_code = ?", postal_code)}
 
-	def category_attributes=(attributes)
-		category = Category.find_or_initialize_by(name: name)
-		self.category = category if category.valid?
-	end
-
+	accepts_nested_attributes_for :category
 
 end
