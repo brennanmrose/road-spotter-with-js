@@ -6,13 +6,19 @@
 ## Installation
 	All dependencies can be located in the Gemfile. 
 	To install, run 
-	```bundle install```
+	```
+	$ bundle install
+	```
 
 ## Database initialization
 	This app was built using Sqlite3. To get started, run 
-	```rake db:migrate```
+	```
+	$ rake db:migrate
+	```
 	and
-	```rake db:seed```
+	```
+	$ rake db:seed
+	```
 
 ## Usage
 	Road Spotter is a demo app created for the Department of Transportation to store and manage issues impacting our roadways and transportation hubs reported by citizens 
