@@ -5,7 +5,7 @@
 	<br>
 	<br>
 	<%= f.label :transportation_type, 'Transportation Type:' %>
-	<%= f.select(:transportation_type, ['Driver', 'Pedestrian', 'Cyclist', 'Other'], { include_blank: true }) %>
+	<%= f.select(:transportation_type, ['Driver', 'Pedestrian', 'Cyclist', 'Other'], { include_blank: true, selected: @reported_issue.transportation_type }) %>
 	<br>
 	<br>
 	<%= f.label :street_address, 'Street Address:' %>
