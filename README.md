@@ -1,7 +1,7 @@
 # Road Spotter
 
 ## Ruby version
-	ruby 2.6.1p33
+	ruby-2.6.1
 
 ## Installation
 	All dependencies can be located in the Gemfile. 
