@@ -1,9 +1,10 @@
 <h1>All Reported Issues</h1>
-
-<%= form_tag('/reported_issues', method: 'get') do %>
-  <%= label_tag(:postal_code, 'Find an Issue by Zip Code:') %>
-  <%= text_field_tag(:postal_code) %>
-  <%= submit_tag('Search') %>
+<% if !params[:category_id] %>
+	<%= form_tag('/reported_issues', method: 'get') do %>
+  	<%= label_tag(:postal_code, 'Find an Issue by Zip Code:') %>
+  	<%= text_field_tag(:postal_code) %>
+  	<%= submit_tag('Search') %>
+	<% end %>
 <% end %>
 <br>
 
