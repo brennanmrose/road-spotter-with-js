@@ -42,6 +42,7 @@ gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+# Ensures that environment variables are correctly loaded into the ENV hash in a secure manner
 gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
