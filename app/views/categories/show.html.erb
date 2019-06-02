@@ -1,10 +1,6 @@
 <h1><%= @category.name %></h1>
 <% @category.reported_issues.map do |issue| %>
-	<ol>
-		<li>
-			Street Address: <%= issue.street_address %> <%= issue.locality %>, <%= issue.region %> <%= issue.postal_code %>
-		</li>
-	</ol?>
+		<li><%= issue.street_address %> <%= issue.locality %>, <%= issue.region %> <%= issue.postal_code %></li>
 <% end %>
 <br>
 <%= link_to "See reported issues for #{@category.name}", category_reported_issues_path(@category) %>

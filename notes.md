@@ -1,4 +1,4 @@
 ## Upcase all user input
 ## Create Admin
-## Add if_current_user_display_edit to cat show
-## Fix transportation type on edit not displaying properly
+## Add new route/view/scope to show most reported issues 
+		# Category.joins(:reported_issues).group(:category_id).order('COUNT(category_id)DESC').limit(1)
