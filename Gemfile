@@ -44,6 +44,8 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 # Ensures that environment variables are correctly loaded into the ENV hash in a secure manner
 gem 'bootstrap', '~> 4.3.1'
+gem 'active_model_serializers', '~> 0.10.0'
+# Provides a basic serializer implementation that allows you to easily control how a given object is going to be serialized
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
