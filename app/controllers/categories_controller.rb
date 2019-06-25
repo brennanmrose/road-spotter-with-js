@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
 
 	def index
 		@categories = Category.all
+		respond_to do |format|
+			format.html 
+			format.json { render json: @categories }
+		end
 	end
 
 	def new
@@ -11,9 +15,11 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.find_or_initialize_by(category_params)
-		if @category.valid?
-			@category.save
-			redirect_to category_path(@category)
+		if @category.save
+			respond_to do |format| 
+				format.html { redirect_to category_path(@category) }
+				format.json { render json: @category }
+			end
 		else
 			render :new
 		end
@@ -21,6 +27,10 @@ class CategoriesController < ApplicationController
 
 	def show
 		@category = Category.find(params[:id])
+		respond_to do |format|
+			format.html
+			format.json { render json: @category }
+		end
 	end
 
 	private
