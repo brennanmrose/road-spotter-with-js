@@ -1,3 +1,3 @@
 class ReportedIssueSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :chief_complaint, :transportation_type, :street_address, :locality, :region, :postal_code, :user_id, :category_id
 end
