@@ -5,6 +5,7 @@ $(() => {
 const bindClickHandlers = () => {
 	$('.all-categories').on('click', (e) => {
 		e.preventDefault();
+		history.pushState(null, null, "categories")
 		fetch(`/categories.json`)
 			.then(response => response.json())
 			.then(data => {
