@@ -27,7 +27,7 @@ function Category(category) {
 
 Category.prototype.formatIndex = function() {
 	let categoryHtml = `
-		<h1>${this.name}</h1>
+		<a href="/categories/${this.id}"<h1>${this.name}</h1></a>
 	`
 	return categoryHtml
 }
