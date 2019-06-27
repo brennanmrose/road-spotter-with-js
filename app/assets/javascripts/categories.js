@@ -17,6 +17,16 @@ const bindClickHandlers = () => {
 				})
 			})
 	})
+
+	$(document).on('click', ".show_link", function(e) {
+		e.preventDefault();
+		let id = $(this).attr('data-id')
+		fetch(`/categories/${id}.json`)
+		.then(response => response.json())
+		.then(category => {
+			console.log(category)
+		})
+	})
 }
 
 function Category(category) {
@@ -27,7 +37,7 @@ function Category(category) {
 
 Category.prototype.formatIndex = function() {
 	let categoryHtml = `
-		<a href="/categories/${this.id}" class="show_link"<h1>${this.name}</h1></a>
+		<a href="/categories/${this.id}" data-id="${this.id}" class="show_link"<h1>${this.name}</h1></a>
 	`
 	return categoryHtml
 }
