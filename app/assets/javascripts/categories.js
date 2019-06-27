@@ -12,13 +12,16 @@ const bindClickHandlers = () => {
 
 	$(document).on('click', ".show_link", function(e) {
 		e.preventDefault();
-		$('#app-container').html('')
 		let id = $(this).attr('data-id')
+		history.pushState(null, "null", `categories/${id}`)
+		$('#app-container').html('')
 		fetch(`/categories/${id}.json`)
 			.then(response => response.json())
 			.then(category => {
 				let newCategory = new Category(category)
+
 				let categoryHtml = newCategory.formatShow()
+
 				$('#app-container').append(categoryHtml)
 		})
 	})
@@ -53,6 +56,7 @@ Category.prototype.formatIndex = function() {
 Category.prototype.formatShow = function() {
 	let categoryHtml = `
 		<h3>${this.name}</h3>
+		<button class="next-category">Next</button>
 	`
 	return categoryHtml
 }
