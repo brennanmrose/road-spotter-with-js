@@ -25,6 +25,9 @@ class CategoriesController < ApplicationController
 		end
 	end
 
+	def next
+	end
+
 	def show
 		@category = Category.find(params[:id])
 		respond_to do |format|
