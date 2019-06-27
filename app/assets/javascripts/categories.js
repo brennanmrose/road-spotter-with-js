@@ -6,16 +6,8 @@ const bindClickHandlers = () => {
 	$('.all-categories').on('click', (e) => {
 		e.preventDefault();
 		history.pushState(null, null, "categories")
-		fetch(`/categories.json`)
-			.then(response => response.json())
-			.then(data => {
-				$('#app-container').html('')
-				data.forEach(category => {
-					let newCategory = new Category(category)
-					let categoryHtml = newCategory.formatIndex()
-					$('#app-container').append(categoryHtml)
-				})
-			})
+		getCategories();
+
 	})
 
 	$(document).on('click', ".show_link", function(e) {
@@ -23,12 +15,25 @@ const bindClickHandlers = () => {
 		$('#app-container').html('')
 		let id = $(this).attr('data-id')
 		fetch(`/categories/${id}.json`)
-		.then(response => response.json())
-		.then(category => {
-			let newCategory = new Category(category)
-			let categoryHtml = newCategory.formatShow()
-			$('#app-container').append(categoryHtml)
+			.then(response => response.json())
+			.then(category => {
+				let newCategory = new Category(category)
+				let categoryHtml = newCategory.formatShow()
+				$('#app-container').append(categoryHtml)
 		})
+	})
+}
+
+const getCategories = () => {
+	fetch(`/categories.json`)
+		.then(response => response.json())
+		.then(data => {
+			$('#app-container').html('')
+			data.forEach(category => {
+				let newCategory = new Category(category)
+				let categoryHtml = newCategory.formatIndex()
+				$('#app-container').append(categoryHtml)
+			})
 	})
 }
 
