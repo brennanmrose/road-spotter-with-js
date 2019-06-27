@@ -15,3 +15,9 @@ const bindClickHandlers = () => {
 			})
 	})
 }
+
+function Category(category) {
+	this.id = category.id
+	this.name = category.name
+	this.reported_issues = category.reported_issues
+}
