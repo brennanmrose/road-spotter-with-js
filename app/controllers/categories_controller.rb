@@ -26,6 +26,9 @@ class CategoriesController < ApplicationController
 	end
 
 	def next
+		@category = Category.find(params[:id])
+		@next_category = @category.next
+		render json: @next_category
 	end
 
 	def show
