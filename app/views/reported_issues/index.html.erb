@@ -16,9 +16,12 @@
 <ul>
 	<li>
 		<%= issue.chief_complaint %><br>
-		<%= link_to 'Link to issue', category_reported_issue_path(issue.category, issue) %><br>
 		<%= issue.locality %>, <%= issue.region %> <%= issue.postal_code %><br>
-		Category: <%= link_to "#{issue.category.name}", category_path(issue.category_id) %>
+		<% if @category.present? %>
+			<%= link_to 'More Info', category_reported_issue_path(@category, issue) %>
+		<% else %>
+			<%= link_to 'More Info', reported_issue_path(issue) %>
+		<% end %>
 	</li>
 </ul>
 <% end %>

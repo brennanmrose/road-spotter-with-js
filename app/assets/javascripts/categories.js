@@ -38,8 +38,9 @@ const bindClickHandlers = () => {
 				const htmlToAdd = newCategory.formatShow()
 
 				$('#app-container').html(htmlToAdd)
+
 			})
-		// serializes information entered into form, allow us to send back to server
+				// serializes information entered into form, allow us to send back to server
 
 	})
 
