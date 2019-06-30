@@ -25,6 +25,26 @@ const bindClickHandlers = () => {
 				$('#app-container').append(categoryHtml)
 		})
 	})
+
+	$('#new_category').on('submit', function(e) {
+		e.preventDefault();
+		// hijack submit button
+		const values = $(this).serialize()
+		// serializes information entered into form, allow us to send back to server
+	})
+
+	// $(document).on('click', 'next-post', function() {
+	// 	let id = $(this).attr('data-id')
+	// 	fetch(`categories/${id}/next`)
+	// 		.then(response => response.json())
+	// 		.then(category => {
+	// 			let newCategory = new Category(category)
+
+	// 			let categoryHtml = newCategory.formatShow()
+
+	// 			$('#app-container').append(categoryHtml)
+	// 	})
+	// })
 }
 
 const getCategories = () => {
