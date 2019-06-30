@@ -32,9 +32,13 @@ const bindClickHandlers = () => {
 		const values = $(this).serialize()
 
 		$.post("/categories", values).done(function(data) {
-				console.log(data)
+				$('#app-container').html('')
+
+				const newCategory = new Category(data)
+				const htmlToAdd = newCategory.formatShow()
+
+				$('#app-container').html(htmlToAdd)
 			})
-		// const values = $(this).serialize()
 		// serializes information entered into form, allow us to send back to server
 
 	})
