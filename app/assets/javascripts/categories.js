@@ -66,7 +66,10 @@ const getCategories = () => {
 			data.forEach(category => {
 				let newCategory = new Category(category)
 				let categoryHtml = newCategory.formatIndex()
-				$('#app-container').append(categoryHtml)
+				$('#app-container').append(
+					`<h1>All Categories:</h1>`
+					categoryHtml
+					)
 			})
 	})
 }
@@ -79,7 +82,9 @@ function Category(category) {
 
 Category.prototype.formatIndex = function() {
 	let categoryHtml = `
-		<a href="/categories/${this.id}" data-id="${this.id}" class="show_link"<h1>${this.name}</h1></a>
+		<ul>
+			<li><a href="/categories/${this.id}" data-id="${this.id}" class="show_link"<h1>${this.name}</h1></a></li>
+		</ul>
 	`
 	return categoryHtml
 }
