@@ -16,10 +16,7 @@ class CategoriesController < ApplicationController
 	def create
 		@category = Category.find_or_initialize_by(category_params)
 		if @category.save
-			respond_to do |format| 
-				format.html { redirect_to category_path(@category) }
-				format.json { render json: @category }
-			end
+			render json: @category
 		else
 			render :new
 		end

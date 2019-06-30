@@ -28,9 +28,15 @@ const bindClickHandlers = () => {
 
 	$('#new_category').on('submit', function(e) {
 		e.preventDefault();
-		// hijack submit button
+
 		const values = $(this).serialize()
+
+		$.post("/categories", values).done(function(data) {
+				console.log(data)
+			})
+		// const values = $(this).serialize()
 		// serializes information entered into form, allow us to send back to server
+
 	})
 
 	// $(document).on('click', 'next-post', function() {
