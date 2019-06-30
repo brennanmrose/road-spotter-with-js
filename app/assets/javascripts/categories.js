@@ -62,14 +62,11 @@ const getCategories = () => {
 	fetch(`/categories.json`)
 		.then(response => response.json())
 		.then(data => {
-			$('#app-container').html('')
+			$('#app-container').html(`<h1>All Categories:</h1>`)
 			data.forEach(category => {
 				let newCategory = new Category(category)
 				let categoryHtml = newCategory.formatIndex()
-				$('#app-container').append(
-					`<h1>All Categories:</h1>`
-					categoryHtml
-					)
+				$('#app-container').append(categoryHtml)
 			})
 	})
 }
