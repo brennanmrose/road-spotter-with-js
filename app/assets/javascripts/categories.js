@@ -87,9 +87,21 @@ Category.prototype.formatIndex = function() {
 }
 
 Category.prototype.formatShow = function() {
-	let categoryHtml = `
-		<h3>${this.name}</h3>
-		<button class="next-category">Next</button>
+
+	let reportedIssuesHtml = ``
+		this.reported_issues.forEach( issue => {
+			reportedIssuesHtml += `<li>${issue.street_address}</li>`
+	})
+
+	let categoryHtml = 
+	`
+		<h1>${this.name}</h1>
+		${reportedIssuesHtml}
 	`
 	return categoryHtml
 }
+
+
+
+
+
