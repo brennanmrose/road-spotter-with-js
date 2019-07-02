@@ -90,7 +90,11 @@ Category.prototype.formatShow = function() {
 
 	let reportedIssuesHtml = ``
 		this.reported_issues.forEach( issue => {
-			reportedIssuesHtml += `<li>${issue.street_address}</li>`
+			reportedIssuesHtml += `
+				<ul>
+					<li>${issue.chief_complaint}<br>${issue.locality}, ${issue.region} ${issue.postal_code}</li>
+				</ul>
+			`
 	})
 
 	let categoryHtml = 
