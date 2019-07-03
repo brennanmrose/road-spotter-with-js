@@ -7,7 +7,6 @@ const bindClickHandlers = () => {
 		e.preventDefault();
 		history.pushState(null, null, "categories")
 		getCategories();
-
 	})
 
 	$(document).on('click', ".show_link", function(e) {
@@ -35,26 +34,11 @@ const bindClickHandlers = () => {
 
 				const newCategory = new Category(data)
 				const htmlToAdd = newCategory.formatShow()
-
 				$('#app-container').html(htmlToAdd)
 
 			})
 				// serializes information entered into form, allow us to send back to server
-
 	})
-
-	// $(document).on('click', 'next-post', function() {
-	// 	let id = $(this).attr('data-id')
-	// 	fetch(`categories/${id}/next`)
-	// 		.then(response => response.json())
-	// 		.then(category => {
-	// 			let newCategory = new Category(category)
-
-	// 			let categoryHtml = newCategory.formatShow()
-
-	// 			$('#app-container').append(categoryHtml)
-	// 	})
-	// })
 }
 
 const getCategories = () => {
@@ -103,8 +87,3 @@ Category.prototype.formatShow = function() {
 	`
 	return categoryHtml
 }
-
-
-
-
-
