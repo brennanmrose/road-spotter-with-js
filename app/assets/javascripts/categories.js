@@ -70,7 +70,7 @@ Category.prototype.formatIndex = function() {
 }
 
 Category.prototype.formatShow = function() {
-
+	
 	let reportedIssuesHtml = ``
 		this.reported_issues.forEach( issue => {
 			reportedIssuesHtml += `
