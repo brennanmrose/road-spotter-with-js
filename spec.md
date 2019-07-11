@@ -12,12 +12,13 @@ Project Specs:
 
 Project Repo Specs:
 
-- [x] Read Me file contains:
+Read Me file contains:
 - [x] Application Description
 - [x] Installation guide (e.g. fork and clone repo, migrate db, bundle install, etc)
 - [x] Contributors guide (e.g. file an issue, file an issue with a pull request, etc)
 - [x] Licensing statement at the bottom (e.g. This project has been licensed under the MIT open source license.)
-- [x] Repo General
+
+Repo General
 - [x] You have a large number of small Git commits
 - [x] Your commit messages are meaningful
 - [x] You made the changes in a commit that relate to the commit message
